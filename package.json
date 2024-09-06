@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.143",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^6.0.0"
+  }
+}

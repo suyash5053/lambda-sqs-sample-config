@@ -1,0 +1,20 @@
+service: test-serverless
+frameworkVersion: "4"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  architecture: x86_64
+  region: ap-south-1
+
+functions:
+  test-serverless:
+    handler: index.handler
+    events:
+      - sqs:
+          arn: ${env:AWS_SQS_KEY}
+          batchSize: 10
+          functionResponseType: ReportBatchItemFailures
+
+plugins:
+  - serverless-dotenv-plugin
